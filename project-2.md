@@ -270,7 +270,7 @@ console.log(`Server running on port ${port}`)
 
 #### node index.js
 
-
+# I am stucked at this point, i cannot connect successfully to my database. please i need a help
 
 ### Testing Backend Code without Frontend using RESTful API
 
