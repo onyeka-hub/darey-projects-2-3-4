@@ -62,6 +62,7 @@ server {
         deny all;
     }
 
+}
 
 #### Activate your configuration by linking to the config file from Nginx’s sites-enabled directory: This will tell Nginx to use the configuration next time it is reloaded.
 #### sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
@@ -82,11 +83,10 @@ server {
 
 ## Step 5
 
+
 ### Testing PHP with Nginx
 #### sudo nano /var/www/projectLEMP/info.php and paste the following configuration
 
-<?php
-phpinfo();
 
 #### Access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
 
