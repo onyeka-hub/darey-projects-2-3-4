@@ -87,6 +87,11 @@ server {
 ### Testing PHP with Nginx
 #### sudo nano /var/www/projectLEMP/info.php and paste the following configuration
 
+```
+<?php
+phpinfo();
+```
+
 
 #### Access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
 
@@ -130,6 +135,7 @@ http://`server_domain_or_IP`/info.php
 #### nano /var/www/projectLEMP/todo_list.php
 #### The following PHP script connects to the MySQL database and queries for the content of the todo_list table, displays the results in a list. copy it to your todo_list.php
 
+```
 <?php
 $user = "onyeka_user";
 $password = "onyeka12345";
@@ -147,6 +153,7 @@ try {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
+```
 
 #### You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by /todo_list.php:
 #### http://<Public_domain_or_IP>/todo_list.php
