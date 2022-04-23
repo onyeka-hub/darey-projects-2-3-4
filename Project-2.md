@@ -112,27 +112,39 @@ http://`server_domain_or_IP`/info.php
 #### CREATE DATABASE `onyeka_database`;
 #### Now you can create a new user and grant him full privileges on the database you have just created.
 #### The following command creates a new user named onyeka_user, using mysql_native_password as default authentication method. We’re defining this user’s password as onyeka12345
-#### CREATE USER 'onyeka_user'@'%' IDENTIFIED WITH mysql_native_password BY 'onyeka12345';
+
+`CREATE USER 'onyeka_user'@'%' IDENTIFIED WITH mysql_native_password BY 'onyeka12345';`
+
 #### Now we need to give this user permission over the onyeka_database database:
-#### GRANT ALL ON onyeka_database.* TO 'onyeka_user'@'%';
+
+`GRANT ALL ON onyeka_database.* TO 'onyeka_user'@'%';`
+
 #### You can test if the new user has the proper permissions by logging out and in to the MySQL console again, this time using the custom user credentials:
-#### mysql -u onyeka_user -p
+
+`mysql -u onyeka_user -p`
 
 ![show database](https://user-images.githubusercontent.com/83009045/159675092-493b74c0-ea44-45dc-8c90-1e182c006058.JPG)
 
 #### Next, we’ll create a test table named todo_list. From the MySQL console, run the following statement:
-#### CREATE TABLE onyeka_database.todo_list (item_id INT AUTO_INCREMENT, content VARCHAR(255), PRIMARY KEY(item_id));
+
+`CREATE TABLE onyeka_database.todo_list (item_id INT AUTO_INCREMENT, content VARCHAR(255), PRIMARY KEY(item_id));`
+
 #### Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different VALUES:
-#### INSERT INTO onyeka_database.todo_list (content) VALUES ("My first important item");
+
+`INSERT INTO onyeka_database.todo_list (content) VALUES ("My first important item");`
+
 #### To confirm that the data was successfully saved to your table, run:
-#### SELECT * FROM onyeka_database.todo_list;
+
+`SELECT * FROM onyeka_database.todo_list;`
 
 ![todo list](https://user-images.githubusercontent.com/83009045/159676549-91b29db7-cb90-4c10-97ae-a33e9380a1bf.JPG)
 
 #### exit from mysql
 
 ### Now you can create a PHP script that will connect to MySQL and query for your content. Create a new PHP file in your custom web root directory.
-#### nano /var/www/projectLEMP/todo_list.php
+
+`nano /var/www/projectLEMP/todo_list.php`
+
 #### The following PHP script connects to the MySQL database and queries for the content of the todo_list table, displays the results in a list. copy it to your todo_list.php
 
 ```
@@ -156,7 +168,8 @@ try {
 ```
 
 #### You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by /todo_list.php:
-#### http://<Public_domain_or_IP>/todo_list.php
+
+`http://<Public_domain_or_IP>/todo_list.php`
 
 ![browser todo list](https://user-images.githubusercontent.com/83009045/159680580-2c3321ee-50f0-44a1-9d3c-3a7354797776.JPG)
 
