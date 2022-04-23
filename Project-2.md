@@ -105,12 +105,19 @@ http://`server_domain_or_IP`/info.php
 ## Step 6
  
 ### Retrieving data from MySQL database with PHP
+
 #### We will create a database named onyeka_database and a user named onyeka_user, but you can replace these names with different values.
+
 #### First, connect to the MySQL console using the root account: with this command
-#### sudo mysql 
+
+`sudo mysql`
+
 #### To create a new database use this command:
-#### CREATE DATABASE `onyeka_database`;
+
+`CREATE DATABASE `onyeka_database`;`
+
 #### Now you can create a new user and grant him full privileges on the database you have just created.
+
 #### The following command creates a new user named onyeka_user, using mysql_native_password as default authentication method. We’re defining this user’s password as onyeka12345
 
 `CREATE USER 'onyeka_user'@'%' IDENTIFIED WITH mysql_native_password BY 'onyeka12345';`
