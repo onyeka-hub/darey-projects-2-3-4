@@ -114,7 +114,7 @@ http://`server_domain_or_IP`/info.php
 
 #### To create a new database use this command:
 
-`CREATE DATABASE `onyeka_database`;`
+`CREATE DATABASE onyeka_database;`
 
 #### Now you can create a new user and grant him full privileges on the database you have just created.
 
