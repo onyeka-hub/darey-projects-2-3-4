@@ -85,7 +85,11 @@ server {
 
 
 ### Testing PHP with Nginx
-#### sudo nano /var/www/projectLEMP/info.php and paste the following configuration
+```
+sudo nano /var/www/projectLEMP/info.php
+```
+
+and paste the following configuration
 
 ```
 <?php
