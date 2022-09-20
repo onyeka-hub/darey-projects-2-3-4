@@ -34,7 +34,7 @@ Now change your current directory to the newly created one:
 
 Next, you will use the command npm init to initialise your project, so that a new file named package.json will be created. This file will normally contain information about your application and the dependencies that it needs to run. Follow the prompts after running the command. You can press Enter several times to accept default values, then accept to write out the package.json file by typing yes.
 
-    `npm init`
+   `npm init`
 
 ![npm init](https://user-images.githubusercontent.com/83009045/159725768-8421e50e-aa79-49dc-b2d9-8475925b776d.JPG)
 
@@ -105,7 +105,7 @@ Each task will be associated with some particular endpoint and will use differen
 
 For each task, we need to create routes that will define various endpoints that the To-do app will depend on. So let us create a folder routes
 
-    `mkdir routes`
+   `mkdir routes`
 
 Change directory to routes folder.
 
@@ -279,13 +279,13 @@ console.log(`Server running on port ${port}`)
 
 **Blocker**
 
-[address all ready in use](./images/project-3-EADDRINUSE.PNG)
+![address all ready in use](./images/project-3-EADDRINUSE.PNG)
 
 To solve the above problem I had to restart my ec2 instance because a process was using port 5000.
 
-[connection successful](./images/project-3-db-connection.PNG)
+![connection successful](./images/project-3-db-connection.PNG)
 
-[connection successful](./images/project-3-db-on-browser.PNG)
+![connection successful](./images/project-3-db-on-browser.PNG)
 
 #### Testing Backend Code without Frontend using RESTful API
 
@@ -298,30 +298,31 @@ In this project, we will use Postman to test our API.
 You should test all the API endpoints and make sure they are working. For the endpoints that require body, you should send JSON back with the necessary fields since it’s what we setup in our code.
 
 Now open your Postman, create a POST request to the API 
+```
+    http://<PublicIP-or-PublicDNS>:5000/api/todos
 
-    `http://<PublicIP-or-PublicDNS>:5000/api/todos`
-
-    `http://18.223.212.2:5000/api/todos`
+    http://18.223.212.2:5000/api/todos
+```
 
 This request sends a new task to our To-Do list so the application could store it in the database.
 
 **Note**: make sure your set header key Content-Type as application/json
 
-[header key Content-Type as application/json](./images/headers-content-type.PNG)
+![header key Content-Type as application/json](./images/headers-content-type.PNG)
 
-[post request](./images/post-request.PNG)
+![post request](./images/post-request.PNG)
 
 Create a GET request to your API on http://<PublicIP-or-PublicDNS>:5000/api/todos. This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
 
-[get request](./images/get-request.PNG)
+![get request](./images/get-request.PNG)
 
 To delete a task – you need to send its ID as a part of DELETE request.
 
-[delete request](./images/delete-request.PNG)
+![delete request](./images/delete-request.PNG)
 
 Get request after Delete request to confirm that it was deleted
 
-[get after delete request](./images/get-after-delete-request.PNG)
+![get after delete request](./images/get-after-delete-request.PNG)
 
 By now you have tested backend part of our To-Do application and have made sure that it supports all three operations we wanted:
 
@@ -376,7 +377,7 @@ Before testing the react app, there are some dependencies that need to be instal
 },
 ```
 
-[package.json file to replace the circled portion](./images/replace-package-file.PNG)
+![package.json file to replace the circled portion](./images/replace-package-file.PNG)
 
 ### Configure Proxy in package.json
 
@@ -758,7 +759,7 @@ When you are in the Todo directory run:
 
 Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
 
-[our app on browser](./images/todo-app-on-browser.PNG)
+![our app on browser](./images/todo-app-on-browser.PNG)
 
 Congratulations
 In this Project #3 we have created a simple To-Do and deployed it to MERN stack. We wrote a frontend application using React.js that communicates with a backend application written using Expressjs. We also created a Mongodb backend for storing tasks in a database.
