@@ -84,7 +84,7 @@ console.log(`Server running on port ${port}`)
 Notice that we have specified to use port 5000 in the code. This will be required later when we go on the browser.
 Now it is time to start our server to see if it works. Open your terminal in the same directory as your index.js file and type:
 
-    `node index.js`
+   `node index.js`
 
 If every thing goes well, you should see Server running on port 5000 in your terminal.
 
@@ -109,11 +109,11 @@ For each task, we need to create routes that will define various endpoints that 
 
 Change directory to routes folder.
 
-    `cd routes`
+   `cd routes`
 
 Now, create a file api.js with the command below
 
-    `touch api.js`
+   `touch api.js`
 
 Open the file and populate with the code below
 
@@ -146,11 +146,11 @@ In essence, the Schema is a blueprint of how the database will be constructed, i
 To create a Schema and a model, install mongoose which is a Node.js package that makes working with mongodb easier.
 Change directory back Todo folder with cd .. and install Mongoose
 
-    `npm install mongoose`
+   `npm install mongoose`
 
 Create a new folder models. Change directory into the newly created ‘models’ folder. Inside the models folder, create a file and name it todo.js with this command
 
-    `mkdir models && cd models && touch todo.js`
+  `mkdir models && cd models && touch todo.js`
 
 Open the file created with vim todo.js then paste the code below in the file:
 
@@ -274,9 +274,9 @@ console.log(`Server running on port ${port}`)
 
  Start your server using the command:
 
-```
-node index.js
-```
+
+`node index.js`
+
 **Blocker**
 
 [address all ready in use](./images/project-3-EADDRINUSE.PNG)
@@ -347,9 +347,8 @@ By now you have tested backend part of our To-Do application and have made sure 
 Since we are done with the functionality we want from our backend and API, it is time to create a user interface for a Web client (browser) to interact with the application via API. To start out with the frontend of the To-do app, we will use the **create-react-app** command to scaffold our app.
 
 In the same root directory as your backend code, which is the Todo directory, run:
-```
- npx create-react-app client
-```
+
+   `npx create-react-app client`
 
 This will create a new folder in your Todo directory called client, where you will add all the react code.
 
@@ -358,15 +357,13 @@ This will create a new folder in your Todo directory called client, where you wi
 Before testing the react app, there are some dependencies that need to be installed.
 
 1. Install **concurrently**. It is used to run more than one command simultaneously from the same terminal window.
-```
-    npm install concurrently --save-dev
-```
+
+    `npm install concurrently --save-dev`
 
 2. Install **nodemon**. It is used to run and monitor the server. If there is any change in the server code, nodemon will restart it automatically and load the new changes.
 
-```
-    npm install nodemon --save-dev
-```
+    `npm install nodemon --save-dev`
+
 
 3. In **Todo** folder open the **package.json** file. Change the highlighted part of the below screenshot and replace with the code below.
 
@@ -397,7 +394,7 @@ The whole purpose of adding the proxy configuration in number 3 above is to make
 
 Now, ensure you are inside the Todo directory, and simply do:
 
-    `npm run dev`
+`npm run dev`
 
 Your app should open and start running on localhost:3000
 
@@ -409,27 +406,27 @@ One of the advantages of react is that it makes use of components, which are reu
 
 From your Todo directory run
 
-    `cd client`
+`cd client`
 
 move to the src directory
 
-    `cd src`
+`cd src`
 
 Inside your **src** folder create another folder called **components**
 
-    `mkdir components`
+`mkdir components`
 
 Move into the components directory with
 
-    `cd components`
+`cd components`
 
 Inside ‘components’ directory create three files **Input.js, ListTodo.js and Todo.js.**
 
-    `touch Input.js ListTodo.js Todo.js`
+`touch Input.js ListTodo.js Todo.js`
 
 Open Input.js file
 
-    `vi Input.js`
+`vi Input.js`
 
 Copy and paste the following
 
@@ -485,25 +482,25 @@ To make use of **Axios**, which is a Promise based HTTP client for the browser a
 
 Move to the src folder
 
-    `cd ..`
+`cd ..`
 
 Move to clients folder
 
-    `cd ..`
+`cd ..`
 
 Install Axios
 
-    `npm install axios`
+`npm install axios`
 
 ## FRONTEND CREATION (CONTINUED)
 
 Go to ‘components’ directory
 
-    `cd src/components`
+`cd src/components`
 
 After that open your ListTodo.js
 
-    `vi ListTodo.js`
+`vi ListTodo.js`
 
 in the ListTodo.js copy and paste the following code
 
@@ -600,11 +597,11 @@ We need to make little adjustment to our react code. Delete the logo and adjust 
 
 Move to the src folder
 
-    `cd ..`
+`cd ..`
 
 Make sure that you are in the src folder and run
 
-    `vi App.js`
+`vi App.js`
 
 Copy and paste the code below into it
 
@@ -629,7 +626,7 @@ After pasting, exit the editor.
 
 In the src directory open the **App.css**
 
-    `vi App.css`
+`vi App.css`
 
 Then paste the following code into **App.css:**
 
@@ -727,7 +724,7 @@ Exit
 
 In the **src** directory open the **index.css**
 
-    `vim index.css`
+`vim index.css`
 
 Copy and paste the code below:
 
@@ -753,15 +750,15 @@ monospace;
 
 Go to the Todo directory
 
-    `cd ../..`
+`cd ../..`
 
 When you are in the Todo directory run:
 
-    `npm run dev`
+`npm run dev`
 
 Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
 
-Alt text
+[our app on browser](./images/todo-app-on-browser.PNG)
 
 Congratulations
 In this Project #3 we have created a simple To-Do and deployed it to MERN stack. We wrote a frontend application using React.js that communicates with a backend application written using Expressjs. We also created a Mongodb backend for storing tasks in a database.
