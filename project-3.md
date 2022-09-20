@@ -222,10 +222,10 @@ Create a file in your Todo directory and name it .env.
 Add the connection string to access the database in it, just as below:
 
 ```
-#### DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'
+ DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'
 ```
  
-Ensure to update <username>, <password>, <network-address> and <database> according to your setup or copy the connection string from the mlab mongodb site
+Ensure to update username, password, network-address and database according to your setup or copy the connection string from the mlab mongodb site
 
 
 Now we need to update the index.js to reflect the use of .env so that Node.js can connect to the database.
