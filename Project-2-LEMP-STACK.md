@@ -150,7 +150,7 @@ sudo rm /var/www/projectLEMP/info.php
  
 Retrieving data from MySQL database with PHP
 
-We will create a database named onyeka_database and a user named onyeka_user, but you can replace these names with different values.
+We will create a database named **onyeka_database** and a user named **onyeka_user**, but you can replace these names with different values.
 
 First, connect to the MySQL console using the root account: with this command
 
@@ -186,7 +186,7 @@ mysql -u onyeka_user -p
 
 ![show database](https://user-images.githubusercontent.com/83009045/159675092-493b74c0-ea44-45dc-8c90-1e182c006058.JPG)
 
-Next, we’ll create a test table named todo_list. From the MySQL console, run the following statement:
+Next, we’ll create a test table named **todo_list**. From the MySQL console, run the following statement:
 
 ```
 CREATE TABLE onyeka_database.todo_list (item_id INT AUTO_INCREMENT, content VARCHAR(255), PRIMARY KEY(item_id));
