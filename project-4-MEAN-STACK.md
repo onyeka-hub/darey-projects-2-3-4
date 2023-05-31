@@ -2,54 +2,73 @@
 
 ## Step 1: Install NodeJs
 
-#### Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js is used in this project to set up the Express routes and AngularJS controllers.
-#### Update, upgrade ubuntu and add certificates with the following commands:
+Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js is used in this project to set up the Express routes and AngularJS controllers.
 
-#### sudo apt update, sudo apt upgrade, sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-#### curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+Update, upgrade ubuntu and add certificates with the following commands:
 
-#### Install NodeJS with this command
+```
+sudo apt update, sudo apt upgrade, sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 
-#### sudo apt install -y nodejs
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+```
+
+Install NodeJS with this command
+```
+sudo apt install -y nodejs
+```
 
 ## Step 2: Install MongoDB
 
-#### MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time.
-#### For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
+MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time.
 
-#### sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
 
-#### echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
-#### Install MongoDB with this command:
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+```
 
-#### sudo apt install -y mongodb
+### Install MongoDB with this command:
+```
+sudo apt install -y mongodb
+```
 
+Start The server and Verify that the service is up and running
+```
+sudo service mongodb start
 
-##### Start The server
-#### sudo service mongodb start
-#### Verify that the service is up and running
-#### sudo systemctl status mongodb
+sudo systemctl status mongodb
+```
 
 ![mongodb running](https://user-images.githubusercontent.com/83009045/159794041-f7f73e60-9abc-4447-aa68-69a8169e827e.JPG)
 
 
-#### Install npm – Node package manager.
+### Install npm – Node package manager.
 
-#### sudo apt install -y npm
+```
+sudo apt install -y npm
+```
 
-#### Install body-parser package
+### Install body-parser package
 
-#### We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
+We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
 
-#### sudo npm install body-parser
-#### Create a folder named ‘Books’ and inside this directory lnltialize npm project
+```
+sudo npm install body-parser
+```
 
-#### npm init
+### Create a folder named ‘Books’ and inside this directory lnltialize npm project
 
-#### Add a file to it named server.js
+```
+mkdir Books
 
-#### Copy and paste the web server code below into the server.js file.
+npm init
+```
+
+Add a file to it named server.js
+
+Copy and paste the web server code below into the server.js file.
 
 ```
 var express = require('express');
@@ -68,16 +87,23 @@ app.listen(app.get('port'), function() {
 
 ### Install Express and set up routes to the server
 
-#### Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. 
-#### We will use Express in to pass book information to and from our MongoDB database.
-#### We also will use Mongoose package which provides a straight-forward, schema-based solution to model your application data.
-#### We will use Mongoose to establish a schema for the database to store data of our book register.
+Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications.
 
-#### sudo npm install express mongoose
+We will use Express in to pass book information to and from our MongoDB database.
 
-#### In ‘Books’ folder, create a folder named app
-#### In app folder create a file named routes.js
-#### Copy and paste the code below into routes.js
+We also will use Mongoose package which provides a straight-forward, schema-based solution to model your application data.
+
+We will use Mongoose to establish a schema for the database to store data of our book register.
+
+```
+sudo npm install express mongoose
+```
+
+In ‘Books’ folder, create a folder named app
+
+In app folder create a file named routes.js
+
+Copy and paste the code below into routes.js
 
 ```
 var Book = require('./models/book');
@@ -119,10 +145,11 @@ module.exports = function(app) {
 };
 ```
 
-#### In the ‘apps’ folder, create a folder named models
+In the ‘apps’ folder, create a folder named models
 
-#### Create a file named book.js in the models folder
-#### Copy and paste the code below into ‘book.js’
+Create a file named book.js in the models folder
+
+Copy and paste the code below into ‘book.js’
 
 ```
 var mongoose = require('mongoose');
@@ -143,16 +170,17 @@ module.exports = mongoose.model('Book', bookSchema);
 
 ### Access the routes with AngularJS
 
-#### AngularJS provides a web framework for creating dynamic views in your web applications. 
-#### In this project, we use AngularJS to connect our web page with Express and perform actions on our book register.
+AngularJS provides a web framework for creating dynamic views in your web applications.
 
-#### Change the directory back to ‘Books’
+In this project, we use AngularJS to connect our web page with Express and perform actions on our book register.
 
-#### Create a folder named public
+Change the directory back to ‘Books’
 
-#### Add a file named script.js
+Create a folder named public
 
-#### Copy and paste the Code below (controller configuration defined) into the script.js file.
+Add a file named script.js
+
+Copy and paste the Code below (controller configuration defined) into the script.js file.
 
 ```
 var app = angular.module('myApp', []);
@@ -249,15 +277,18 @@ Cpoy and paste the code below into index.html file.
 </html>
 ```
 
-#### Change the directory back up to Books
-#### Start the server by running this command:
+Change the directory back up to Books
+Start the server by running this command:
 
-#### node server.js
-#### The server is now up and running, we can connect it via port 3300.
+```
+node server.js
+```
 
-#### We can also try and access it from the Internet.
+The server is now up and running, we can connect it via port 3300.
 
-#### For this – you need to open TCP port 3300 in your AWS Web Console for your EC2 Instance.
+We can also try and access it from the Internet.
+
+For this – you need to open TCP port 3300 in your AWS Web Console for your EC2 Instance.
 
 ![testing the server](https://user-images.githubusercontent.com/83009045/159800614-40e98291-2648-485c-896e-eba0da32b0a9.JPG)
 
