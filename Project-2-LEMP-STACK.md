@@ -172,6 +172,16 @@ The following command creates a new user named onyeka_user, using mysql_native_p
 CREATE USER 'onyeka_user'@'%' IDENTIFIED WITH mysql_native_password BY 'onyeka12345';
 ```
 
+The syntax for creating a user with a password in MySQL/MariaDB is slightly different
+```
+CREATE USER 'webaccess'@'%' IDENTIFIED BY 'secret';
+```
+
+To check for users
+```
+SELECT User, Host FROM mysql.user;
+```
+
 Now we need to give this user permission over the onyeka_database database:
 
 ```
