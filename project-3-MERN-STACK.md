@@ -300,7 +300,19 @@ console.log(`Server running on port ${port}`)
 
 ![address all ready in use](./images/project-3-EADDRINUSE.PNG)
 
-To solve the above problem I had to restart my ec2 instance because a process was using port 5000.
+To solve the above problem you either restart the ec2 instance because a process was using port 5000 or you kill the process running on port 5000.
+
+To kill the process, run the below command to get the process ID:
+
+`lsof -i tcp:5000`
+
+Run the below coammnd to kill the process:
+
+`kill -9 PID`
+
+Start the node again:
+
+`node index.jx`
 
 ![connection successful](./images/project-3-db-connection.PNG)
 
