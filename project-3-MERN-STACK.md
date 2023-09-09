@@ -636,6 +636,8 @@ Make sure that you are in the src folder and run
 
 `vi App.js`
 
+Delete the code there.
+
 Copy and paste the code below into it
 
 ```
@@ -660,6 +662,8 @@ After pasting, exit the editor.
 In the src directory open the **App.css**
 
 `vi App.css`
+
+Delete the code there.
 
 Then paste the following code into **App.css:**
 
@@ -758,6 +762,8 @@ Exit
 In the **src** directory open the **index.css**
 
 `vim index.css`
+
+Delete the code there.
 
 Copy and paste the code below:
 
