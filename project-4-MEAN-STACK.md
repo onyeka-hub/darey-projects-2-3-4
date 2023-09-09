@@ -80,7 +80,7 @@ sudo apt install -y mongodb
 Start The server and Verify that the service is up and running
 ```
 sudo service mongodb start
-
+sudo service enable mongodb
 sudo systemctl status mongodb
 ```
 
