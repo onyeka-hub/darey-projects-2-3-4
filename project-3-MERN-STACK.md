@@ -421,7 +421,10 @@ Before testing the react app, there are some dependencies that need to be instal
 
     `vi package.json`
 
-3. Add the key value pair in the package.json file "proxy": "http://localhost:5000",
+3. Add the key value pair in the package.json file
+   ```
+   "proxy": "http://localhost:5000",
+   ```
 
 The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
 
