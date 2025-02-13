@@ -1,6 +1,6 @@
 # darey-projects
 
-## spin up ubuntu servere in aws
+## spin up ubuntu server in aws
 
 ## Step 1
 
