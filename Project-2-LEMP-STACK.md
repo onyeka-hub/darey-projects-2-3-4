@@ -18,7 +18,7 @@ verify that the nginx successfully installed
 
 ## Step 2
 
-### Istalling mysql
+### Installing mysql
 ```
 sudo apt install mysql-server
 ```
@@ -38,7 +38,7 @@ sudo mysql
 
 ## Step 3
 
-### Insallingh php and its dependencies
+### Installing php and its dependencies
 
 ```
 sudo apt install php-fpm php-mysql
