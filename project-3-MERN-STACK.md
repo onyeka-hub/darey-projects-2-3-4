@@ -18,7 +18,7 @@ sudo apt-get install -y nodejs
 
 **Note**: The command above installs both nodejs and npm. NPM is a package manager for Node like apt for Ubuntu, it is used to install Node modules & packages and to manage dependency conflicts.
 
-Verify the node installation and Verify the node installation with the command below
+Verify the node installation with the command below
 
 ```
 node -v
